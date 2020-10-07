@@ -1,0 +1,20 @@
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: tacodb
+    password: 1234
+  thymeleaf:
+    cache: false
+
+---
+spring:
+  profiles: prod
+  datasource:
+    url: jdbc:postgres://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}
+    username: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
+  #    Add in Liquidbase
+  jpa:
+    hibernate:
+      ddl-auto: create
