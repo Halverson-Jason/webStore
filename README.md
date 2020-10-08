@@ -77,8 +77,14 @@ To get a local copy up and running follow these simple steps.
 ```sh
 git clone https://github.com/Halverson-Jason/webStore.git
 ```
-
-
+2. Build the project Open the project in any editor like Intellij or Eclipse and build from terminal by executing the following command.
+```sh
+mvn install
+```
+3. Launch the Application, Before launching the Application, edit application.yml as per your Postgres credentials and change application.properties to the prod , if deploying.
+```sh
+mvn spring-boot:run
+```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
