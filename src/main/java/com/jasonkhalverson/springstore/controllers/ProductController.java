@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Slf4j
 @Controller
-@RequestMapping("/products")
+@RequestMapping("/")
 public class ProductController {
     private final ProductRepository productRepository;
 
@@ -22,7 +22,7 @@ public class ProductController {
     @GetMapping
     public String showItems(Model model){
         model.addAttribute("products", productRepository.findAll());
-        return "products";
+        return "home";
     }
 
 }
