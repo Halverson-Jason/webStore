@@ -41,8 +41,8 @@
                 </li>
             </ul>
             <span class="navbar-text">
-          <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <form class="form-inline" th:action="@{/api/search/}" method="get">
+            <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0 bg-success text-white" type="submit">Search</button>
           </form>
         </span>

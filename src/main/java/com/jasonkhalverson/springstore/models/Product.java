@@ -3,6 +3,8 @@ package com.jasonkhalverson.springstore.models;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.search.mapper.pojo.mapping.definition.annotation.FullTextField;
+import org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -17,6 +19,7 @@ import java.util.Date;
 @RequiredArgsConstructor
 @Entity
 @Table(name = "products")
+@Indexed
 public class Product {
 
     @Id
@@ -26,10 +29,12 @@ public class Product {
 
     @NotNull(message = "Product name is required.")
     @Basic(optional = false)
+    @FullTextField
     private final String name;
 
     @NotNull
     @Size(min=5, message="Name must be at least 5 characters long")
+    @FullTextField
     private final String description;
 
     @Positive(message = "Price should be greater than 0")
